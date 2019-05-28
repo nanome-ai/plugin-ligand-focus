@@ -74,6 +74,8 @@ class LigandFocus(nanome.PluginInstance):
                     atom.rendering.selected = False
                     atom.rendering.surface_rendering = False
                     atom.rendering.set_visible(False)
+
+                complex.rendering.set_surface_needs_redraw()
         
         def on_update_done():
             pass
