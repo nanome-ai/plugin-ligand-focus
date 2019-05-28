@@ -62,6 +62,7 @@ class LigandFocus(nanome.PluginInstance):
                     continue
 
                 atom_absolute_pos = complex_local_to_workspace_matrix * atom.molecular.position
+                found_atoms.clear()
                 ligand_atoms.get_near_append(atom_absolute_pos, SURROUNDING_DISTANCE, found_atoms, 1)
 
                 if len(found_atoms) > 0:
@@ -71,7 +72,8 @@ class LigandFocus(nanome.PluginInstance):
                     atom.rendering.atom_color = Color.White()
                 else:
                     atom.rendering.selected = False
-                    atom.rendering.atom_mode = nanome.structure.Atom.AtomRenderingMode.Point
+                    atom.rendering.surface_rendering = False
+                    atom.rendering.set_visible(False)
         
         def on_update_done():
             pass
