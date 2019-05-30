@@ -1,0 +1,5 @@
+nanome
+build/
+dist/
+nanome_ligand_focus.egg-info/
+**__pycache__**

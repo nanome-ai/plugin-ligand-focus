@@ -83,7 +83,10 @@ class LigandFocus(nanome.PluginInstance):
 
         self.update_structures_deep(structures_to_update, on_update_done)
 
-if __name__ == "__main__":
+def main():
     plugin = nanome.Plugin("Ligand Focus", "On-click focus on a ligand and its binding site", "Utilities", False)
     plugin.set_plugin_class(LigandFocus)
     plugin.run('127.0.0.1', 8888)
+
+if __name__ == "__main__":
+    main()
